@@ -1,0 +1,26 @@
+{
+    "name": "jomisacu/ranking-generator",
+    "description": "A tool to rank items by well known criterias",
+    "type": "library",
+    "require": {
+        "php": "^7.4",
+        "symfony/uid": "5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jomisacu\\RankingGenerator\\": "src/",
+            "Jomisacu\\RankingGeneratorTests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jomisacu",
+            "email": "jomisacu.software@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
