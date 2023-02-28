@@ -12,7 +12,11 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Jomisacu\\RankingGenerator\\": "src/",
+            "Jomisacu\\RankingGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Jomisacu\\RankingGeneratorTests\\": "tests/"
         }
     },
