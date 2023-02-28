@@ -22,6 +22,8 @@ final class Ranking
         $this->id = $id;
         $this->name = $name;
         $this->items = $items;
+
+        $this->sort();
     }
 
     public function getId(): string
@@ -86,5 +88,20 @@ final class Ranking
     public function getItems(): array
     {
         return $this->items;
+    }
+
+    private function sort(): void
+    {
+        usort($this->items, function (RankableItemInterface $rankableItem1, RankableItemInterface $rankableItem2) {
+            if ($rankableItem1->getRating() > $rankableItem2->getRating()) {
+                return -1;
+            }
+
+            if ($rankableItem2->getRating() > $rankableItem1->getRating()) {
+                return 1;
+            }
+
+            return 0;
+        });
     }
 }
