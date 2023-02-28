@@ -64,7 +64,7 @@ final class Ranking
 
     private function putRankableItem(int $position, RankableItemInterface $rankableItem): void
     {
-        array_splice($this->items, $position, 1, $rankableItem);
+        array_splice($this->items, $position, 0, [$rankableItem]);
     }
 
     private function getItemByPosition(int $position): ?RankableItemInterface
