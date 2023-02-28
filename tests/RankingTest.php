@@ -59,7 +59,7 @@ class RankingTest extends TestCase implements RankingGeneratorInterface
     {
         $rankableItems = [];
         foreach ($items as $item) {
-            $rankableItems[] = new RankableSmartTv($item['size'], $item['name']);
+            $rankableItems[] = $this->buildRankingItem($item['size'], $item['name']);
         }
 
         return $rankableItems;
