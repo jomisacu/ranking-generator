@@ -46,9 +46,9 @@ final class Ranking
         if ($previousItem && $nextItem) {
             $newRating = ($previousItem->getRating()->value() + $nextItem->getRating()->value()) / 2;
         } elseif ($previousItem) {
-            $newRating = $previousItem->getRating()->value();
+            $newRating = $previousItem->getRating()->value() - 0.01;
         } elseif ($nextItem) {
-            $newRating = $nextItem->getRating()->value();
+            $newRating = $nextItem->getRating()->value() + 0.01;
         }
 
         $rankableItem->setManualRating(new Rating($newRating));
