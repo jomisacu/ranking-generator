@@ -74,7 +74,7 @@ final class Ranking
         return $this->items[$position] ?? null;
     }
 
-    private function getPosition(RankableItemInterface $rankableItem): int
+    public function getPosition(RankableItemInterface $rankableItem): int
     {
         foreach (array_values($this->getItems()) as $position => $item) {
             if ($item->getId() == $rankableItem->getId()) {
