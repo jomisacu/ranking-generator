@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jomisacu\RankingGeneratorTests\Stubs;
 
 use Jomisacu\RankingGenerator\RankableItemTrait;
+use Jomisacu\RankingGenerator\Rating;
 
 final class RankableSmartTv implements \Jomisacu\RankingGenerator\Contracts\RankableItemInterface
 {
@@ -44,8 +45,8 @@ final class RankableSmartTv implements \Jomisacu\RankingGenerator\Contracts\Rank
         return $this->model;
     }
 
-    protected function computeRating(): float
+    protected function computeRating(): Rating
     {
-        return $this->displaySizeInInches * 100 / self::MAX_DISPLAY_SIZE_IN_INCHES;
+        return new Rating($this->displaySizeInInches * 100 / self::MAX_DISPLAY_SIZE_IN_INCHES);
     }
 }

@@ -28,10 +28,10 @@ trait RankableItemTrait
 
     public function getRating(): Rating
     {
-        return $this->manualRating ?? $this->rating ?? $this->rating = new Rating($this->computeRating());
+        return $this->manualRating ?? $this->rating ?? $this->rating = $this->computeRating();
     }
 
-    abstract protected function computeRating(): float;
+    abstract protected function computeRating(): Rating;
 
     public function setManualRating(Rating $rating): void
     {
