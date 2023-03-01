@@ -8,6 +8,8 @@ use Jomisacu\RankingGenerator\Exceptions\RatingValueOutOfRangeException;
 
 final class Rating
 {
+    public const RATING_MAX_VALUE = 1000;
+
     private float $value;
 
     public function __construct(float $value)
@@ -24,7 +26,7 @@ final class Rating
 
     private function validate(float $value): void
     {
-        if ($value < 1 || $value > 100) {
+        if ($value < 1 || $value > self::RATING_MAX_VALUE) {
             throw new RatingValueOutOfRangeException();
         }
     }

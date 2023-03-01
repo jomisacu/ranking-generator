@@ -23,12 +23,12 @@ class DefaultRatingPresenterTest extends TestCase
         $presenter = new DefaultRatingPresenter();
 
         $generated = [];
-        foreach (range(1, 100) as $number) {
+        foreach (range(1, Rating::RATING_MAX_VALUE) as $number) {
             $generated[] = $presenter->getRatingValue(new Rating($number), $base);
         }
 
         $generatedWithLessIsBetter = [];
-        foreach (range(100, 1) as $number) {
+        foreach (range(Rating::RATING_MAX_VALUE, 1) as $number) {
             $generatedWithLessIsBetter[] = $presenter->getRatingValue(new Rating($number), $base, true);
         }
 

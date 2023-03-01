@@ -16,9 +16,9 @@ final class DefaultRatingPresenter implements Contracts\RatingPresenterInterface
     private function calculateRating(float $ratingValue, int $base, bool $lessIsBetter = false)
     {
         if ($lessIsBetter) {
-            $ratingValue -= 101;
+            $ratingValue -= (Rating::RATING_MAX_VALUE + 1);
         }
 
-        return abs($ratingValue) / 100 * $base;
+        return abs($ratingValue) / Rating::RATING_MAX_VALUE * $base;
     }
 }
