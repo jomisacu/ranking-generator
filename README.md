@@ -11,6 +11,13 @@ It's not just about listing by number. There are general classifications based o
 could have a classification called "the 10 best smartphones of 2022", where the place in the ranking would be given by
 the combination of multiple factors.
 
+## Installation
+
+The most simple way to install this package is with composer:
+```shell
+composer require jomisacu/ranking-generator
+```
+
 ## How to use this library?
 
 There are two ways to use this library. First, we can convert our objects into "rankable". That is, implements the
