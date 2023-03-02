@@ -54,11 +54,11 @@ final class VideoCamera implements RankableItemInterface
         return $this->modelName;
     }
 
-    protected function computeRating(): float
+    protected function computeRating(): \Jomisacu\RankingGenerator\Rating
     {
         $maxPixelsPossible = 4000;
 
-        return $this->getValue() * 100 / $maxPixelsPossible; // ensures return a value between 1 and 100
+        return new Rating($this->getValue() * 100 / $maxPixelsPossible); // ensures return a value between 1 and 100
     }
 }
 
